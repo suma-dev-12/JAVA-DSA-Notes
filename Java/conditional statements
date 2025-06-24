@@ -1,0 +1,80 @@
+1. if, else if, else – Decision Making
+>> What is it?
+  A control structure used to execute different blocks of code based on boolean conditions.
+ Syntax:
+       if (condition) {
+         // runs if condition is true
+         } else if (anotherCondition) {
+         // runs if above is false and this is true
+           } 
+         else {
+            // runs if all above conditions are false
+         }
+Key Points:
+Conditions must evaluate to true/false.
+Only one block among if, else if, else will execute.
+else block is optional.
+
+Example:
+int marks = 80;
+if(marks >= 90) System.out.println("A");
+else if(marks >= 75) System.out.println("B");
+else System.out.println("C");
+
+2. switch-case – Multi-way Decision
+>> What is it?
+switch selects one out of many blocks based on the exact value of a variable.
+  switch (variable) {
+    case value1:
+        // block
+        break;
+    case value2:
+        // block
+        break;
+    default:
+        // block if no match
+}
+
+>>Key Points:
+ Use break to stop execution after a case.
+ default acts like else and is optional.
+ Works with: int, char, String, enum (Java 7+)
+>>Example:
+  String day = "MONDAY";
+switch(day) {
+    case "MONDAY": System.out.println("Work"); break;
+    case "SUNDAY": System.out.println("Rest"); break;
+    default: System.out.println("Unknown");
+}
+
+3. for Loop – Fixed Repetition
+>>What is it?
+  Used to repeat a block of code a fixed number of times.
+  for (init; condition; update) {
+    // loop body
+}
+Key Points:
+Best when number of iterations is known.
+All control in one line: start → stop → step
+
+while Loop – Condition-Based Repetition
+>>What is it?
+Repeats code as long as a condition remains true.
+>>Key Points:
+Best when number of iterations is unknown.
+Loop may run 0 or more times based on condition.
+>>Example
+int x = 5;
+while(x > 0) {
+    System.out.print(x + " "); // 5 4 3 2 1
+    x--;
+}
+
+do-while Loop – At Least One Execution
+>>What is it?
+Similar to while, but ensures the loop runs at least once.
+>>Example:
+int x = 0;
+do {
+    System.out.println("Runs at least once");
+} while(x > 0);
