@@ -1,0 +1,76 @@
+1. What is the difference between if-else and switch statements?
+Answer:
+>if-else is used for range-based or complex conditions.
+>switch is used for fixed, discrete values like int, char, String.
+>switch is more readable and cleaner for many constant value comparisons.
+
+2. When would you prefer a switch over if-else?
+Answer:
+Use switch when:
+The variable being checked is compared to constant values.
+You want cleaner and more readable code with multiple cases.
+Use if-else when:
+You have complex boolean expressions or range comparisons.
+
+3. What happens if break is not used in a switch block?
+Answer:
+Without break, fall-through occurs: all the cases after the matching case will also execute until a break is found.
+int day = 2;
+switch(day) {
+    case 1: System.out.println("Mon");
+    case 2: System.out.println("Tue");
+    case 3: System.out.println("Wed");
+} // Output: Tue Wed
+
+4. Can switch work with strings in Java?
+Answer:
+Yes. From Java 7 onwards, switch supports String values.
+String color = "red";
+switch(color) {
+    case "red": System.out.println("Stop"); break;
+    case "green": System.out.println("Go"); break;
+}
+
+5. What is the use of the default case in switch?
+Answer:
+It is used to handle all unmatched values. It acts like the else block in if-else structure.
+
+7. What is the difference between while and for loops?
+Answer:
+
+Feature           for loop                                 while loop
+Use case         Known count                                Unknown count
+Structure        Compact (init, cond, inc)                  Only condition
+Best for         Index-based iteration                       User input / condition-based
+
+
+ 8. Can a while loop run zero times?
+Answer:
+Yes. If the condition is false at the beginning, the while loop body will not execute even once.
+int x = 5;
+while (x < 5) {
+    System.out.println(x); // won't execute
+}
+
+9. Which loop is best when the number of iterations is unknown?
+Answer:
+while loop is best when you don't know how many times the loop should run in advance (e.g., user keeps entering values until 0).
+
+Can we write infinite loops using for or while?
+Answer:
+Yes.
+while(true) {}
+for(;;) {}
+
+11. What is the difference between do-while and while?
+
+Answer:
+while: checks the condition before the first iteration.
+do-while: executes the loop at least once, and checks the condition after
+
+ 12. Can if condition be just a variable name?
+Answer:
+No. Java requires the condition inside if to return a boolean. Unlike Python or JavaScript, you can’t write just if(x) unless x is boolean.
+int x = 5;
+if(x) { } // ❌ Error in Java
+Use: if(x != 0) instead.
