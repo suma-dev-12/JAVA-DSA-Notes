@@ -1,0 +1,40 @@
+###Java Data Types
+  >>>Defnition
+     Java is statically typed and also a strongly typed language because each type of data
+     , such as integer, character, hexadecimal, packed decimal etc.is predefined as part of the programming language,
+     and all constants or variables defined for a given program must be declared with the specific data types
+
+ >>>Why Data Types Matter in Java?      
+       *Memory Efficiency
+       *Performance
+       *Code Clarity
+       
+  >>>Java Data Type Categories
+       java has two categories in which data types are segregated
+      1. Primitive Data Type:
+          --> these are the simple values that can be stored directly into the variable or memory.
+          -->Example:
+                   *boolean,int,char,short,double,float,byte.
+
+      2. Non-Primitive Data Types (Object Types):
+          -->These are reference types that store memory addresses of objects.
+          -->Example:String,Array,Class,interface,object
+
+
+#####WORKING FLOW OF THE BOTH THE DATATYPES####
+
+  *The values will be stored in the two different memories:
+            --->Stack memory
+            --->Heap memory
+
+  --->PRIMITIVE STYLE
+    *The variables and values will be stored in the same memory location called the stack memory
+    *This are small in size can be stored directly in the Stack memory
+    *This values are easy to acess and proces as well
+
+ ---->NON-PRIMITIVE STYLE
+    *The actual value of the variable are stored in  the heap memory 
+    *The variable contains the memory Address of the actual stored in the memory
+    *The values are stored in the heap memory because the values are large in size
+    *The Stack only contains the reference variable and address
+        
