@@ -1,0 +1,213 @@
+------->CLASS------>
+1. What is a class in Java? How is it different from a structure in C?
+Answer:
+A class in Java is a blueprint used to create objects. It encapsulates data (variables) and behavior (methods) in one unit.
+In C, a struct can only contain data, not methods. A class supports full Object-Oriented Programming, while a struct in C is procedural.
+
+ 2. Why can't we use only methods and variables in main() instead of creating classes?
+Answer:
+Java is a pure object-oriented language where everything must belong to a class. 
+Without using classes, you cannot achieve modularity, reusability, encapsulation, or abstraction.
+Structuring code with classes makes it more maintainable and scalable.
+
+3. Can we run a Java program without creating a class?
+Answer:
+No. 
+Every Java program must contain a class. Even the main() method must be inside a class.
+Java enforces class-based structure, unlike C/C++.
+
+ 4. Can a Java class have only methods and no variables? Is it valid?
+Answer:
+Yes, a class can have only methods and no variables.
+It's valid and useful when the class acts as a utility or helper class (e.g., Math class in Java).
+
+ 5. What happens in memory when you write Car myCar = new Car();?
+Answer:
+JVM loads the Car class if not already loaded.
+Memory is allocated in heap for a new object.
+A reference to the object (myCar) is stored in stack
+The default constructor initializes the object.
+
+6. Is a class stored in stack or heap memory? Explain.
+Answer:
+The class definition (metadata) is stored in method area (part of JVM memory).
+Objects created from a class go to the heap. 
+References (like variables) are stored in the stack.
+
+7. Can multiple objects of a class have different values for variables?
+Answer:
+Yes. Each object has its own copy of instance variables.
+So two objects can store different values for the same variable declared in the class.
+
+
+ 8. How is a class different from an interface? When would you choose a class over an interface?
+Answer:
+A class can have both implemented methods and state (variables).
+An interface is a contract with only abstract methods (before Java 8) and no instance variables.
+Use a class when you need a complete implementation. Use an interface when you want to define a common behavior across unrelated classes.
+
+9. Can we declare a class inside another class? What is it called? Why is it used?
+Answer:
+Yes, it's called a nested class.
+It helps to logically group classes that are only used in one place, improve encapsulation, and hide the inner class from the outside world.
+
+
+10. What are static classes? Can we create static classes in Java? Where are they used?
+Answer:
+In Java, only inner classes can be declared static.
+A static nested class can be accessed without creating an instance of the outer class.
+They’re used when the nested class doesn't need access to the instance members of the outer class.
+
+11. Design Question – School App: How would you model students, teachers, and classes using Java classes?
+Answer:
+Create a Student class with fields: name, rollNumber, grade
+Create a Teacher class with: name, subject, employeeI
+Create a SchoolClass class with: className, teacher, List<Student> students
+Each class will have methods like attendClass(), teach(), addStudent()
+This models the school environment using OOP principles.
+
+---------->OBJECT----->
+✅ 1. What is an object in Java?
+Answer:
+An object is a real instance of a class that holds data and behavior defined in that class.
+It is created using the new keyword and is used to access class members like variables and methods.
+
+
+✅ 2. How is an object different from a class?
+Answer:
+
+Feature   	Class	                           Object
+What?   	Blueprint or template	             Real-world entity created from class
+Memory	  No memory until object made        Occupies memory
+Usage    	Cannot perform actions	           Can call methods, store values
+
+✅3. How do you create an object in Java?
+Answer:
+ClassName objectName = new ClassName();
+
+✅ 4. Can you create multiple objects from the same class?
+Answer:
+Yes. Each object will have its own copy of instance variables, but share static members if any.
+Example:
+Car c1 = new Car();
+Car c2 = new Car();
+
+✅ 5.Where are objects stored in memory?
+Answer:
+Objects are stored in the Heap memory.
+Their reference (like Car c = new Car();) is stored in the Stack memory.
+
+✅ 6. Can you call methods without creating an object?
+Answer:
+Only static methods can be called without an object using the class name.
+Example:
+Math.sqrt(25); 
+
+✅ 7. What happens in memory when you create an object?
+Answer:
+JVM loads the class if not loaded
+Allocates memory on Heap
+Initializes default values
+Calls constructor to assign values
+Returns reference to Stack
+
+✅ 8. Is it possible to compare two objects directly in Java?
+Answer:
+Yes, but be careful:
+== compares references (memory address)
+.equals() compares content (only if overridden)
+
+ ✅ 9. What is the default value of an object if it's a field in a class but not initialized?
+Answer:
+The default value is null for object references.
+Example:
+class Test {
+    Car myCar; // myCar is null by default
+}
+
+✅ 10. Can one object access another object’s private variables?
+Answer:
+No, unless:
+Access is done via public getters/setters
+Or both objects are in the same class and access private variables directly
+
+------>Constructor--->
+
+)
+🔹 1. What is a constructor in Java? How is it different from a method?
+Expected Answer:
+A constructor is a special method used to initialize an object when it is created.
+Key differences:
+Has no return type, not even void
+Name must be same as class name
+Called automatically when object is created
+Cannot be static, abstract, or final
+
+
+🔹2. Can constructors be overloaded in Java?
+Yes.
+You can create multiple constructors in a class as long as their parameter list differs.
+class Car {
+    Car() {}
+    Car(String model) {}
+    Car(String model, int year) {}
+}
+
+🔹 3. Can a constructor call another constructor? How?
+Yes. Using this() for constructor chaining.
+class Box {
+    Box() {
+        this(10); // calls parameterized constructor
+    }
+    Box(int length) {
+        System.out.println(length);
+    }
+}
+
+🔹 4. What is constructor chaining and why is it used?
+Constructor chaining means one constructor calls another using this() to reuse initialization code and avoid repetition.
+
+🔹 5. What is the role of super() in constructors?
+super() is used to call the parent class constructor. It must be the first statement in the child constructor.
+
+class A {
+    A() {
+        System.out.println("A");
+    }
+}
+class B extends A {
+    B() {
+        super(); // calls A's constructor
+        System.out.println("B");
+    }
+}
+
+
+🔹6. What happens if you don't define a constructor in your class?
+Java automatically provides a default constructor (no-arg) if no constructor is written. 
+But if you write any constructor, Java won’t give you a default one.
+
+
+🔹 7. Can a constructor be private? If yes, where is it used?
+Yes. A private constructor is used in the Singleton pattern, where only one instance of a class should exist.
+
+🔹 8. Can a constructor be inherited?
+No. Constructors are not inherited, but the child class can call the parent constructor using super().
+
+🔹 9. Can you have return in a constructor?
+You can use return; (without value) to exit early, but you cannot return any value from a constructor — not even void.
+
+🔹10. Can you write code after this() or super() in a constructor?
+No. this() or super() must be the first statement in the constructor. If not, you'll get a compile-time error.
+
+
+🔹 11. Can a constructor throw an exception?
+Yes. A constructor can throw checked or unchecked exceptions:
+class A {
+    A() throws IOException {
+        // some code
+    }
+}
+
+🔹 12. Can you create an object without using a constructor?
+Not really. Every object creation internally involves a constructor, even if you use tools like reflection or cloning — they all eventually invoke some form of construction.
