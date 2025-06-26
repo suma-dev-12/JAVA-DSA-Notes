@@ -1,0 +1,45 @@
+#####OBJECT ORIENTED PROGRAMMING SYSTEM#######
+---->DEFNITION
+     *Java Object-Oriented Programming (OOPs) is a fundamental concept in Java that every developer must understand.
+      It allows developers to structure code using classes and objects, making it more modular, reusable, and scalable.
+     * It is a programming approach that organizes code into objects and classes and makes it more structured and easy to manage. 
+----->Concepts
+      *Class
+      *object
+      *Abstraction
+      *Encapsulation
+      *Polymorphism
+      *Inheritance
+      *Constructur
+      *Interface
+      *Access Modifier
+------>Class<------
+WHAT?
+  *A class in Java is like a blueprint or a design plan.
+It is not real, but it defines:
+>What kind of data an object will have (variables)
+>What kind of actions it can perform (methods)
+>It does not use real memory until you create an object from it.
+WHY?
+ >To avoid repeating the same code for multiple things
+ >To keep related data and behavior together
+ >To make code more organized, reusable, and easy to manage
+
+HOW?
+  // This is a class named Car
+class Car {
+    // Data (called fields or variables)
+    String color;
+    int speed;
+
+    // Behavior (called methods)
+    void drive() {
+        System.out.println("The car is driving.");
+    }
+
+    void stop() {
+        System.out.println("The car has stopped.");
+    }
+}
+
+
