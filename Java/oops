@@ -41,5 +41,53 @@ class Car {
         System.out.println("The car has stopped.");
     }
 }
+-->Types
+* 1. Concrete Class(A class that has complete implementation (not abstract or special).)
+EG:
+class Car {
+    void drive() {
+        System.out.println("Driving...");
+    }
+}
+
+*Abstract Class(A class that cannot be instantiated, may contain abstract methods (no body), and concrete methods (with body).)
+abstract class Animal {
+    abstract void makeSound();  // abstract method
+
+    void breathe() {           // concrete method
+        System.out.println("Breathing...");
+    }
+}
+
+* Final Class(A class declared with the keyword final. You cannot extend (inherit) from it.)
+EG:final class Bank {
+    void process() {
+        System.out.println("Processing...");
+    }
+}
+*Static Nested Class(A class defined as static inside another class.)
+class Outer {
+    static class StaticNested {
+        void show() {
+            System.out.println("Static Nested Class");
+        }
+    }
+}
+* Inner (Non-static Nested) Class(A class defined inside another class, but not static.)
+EG:
+class Outer {
+    class Inner {
+        void display() {
+            System.out.println("Inner Class");
+        }
+    }
+}
+
+*Anonymous Class(A class without a name, used for one-time use, often when implementing interfaces or abstract classes on the fly.)
+Runnable r = new Runnable() {
+    public void run() {
+        System.out.println("Running...");
+    }
+};
 
 
